@@ -308,8 +308,7 @@ int main() {
                 FFT_indexlist[i] = (FFT_indexlist[i >> 1] >> 1) | ((i & 1) << (l - 1));
             });
         });
-        for (int i = 0; i < 10; i++)
-     std::cout <<"FFindex"<< i << " " << FFT_indexlist[i]<< "\n ";
+
         // swap according to the index
           q.submit([&](handler& h) {
             // Complex temp;
@@ -328,8 +327,7 @@ int main() {
                 }
             });
         });
-         for (int i = 0; i < 10; i++)
-     std::cout <<"data_fft swap index "<< i << " " << DataShared_FFT[i].real<< " " << DataShared_FFT[i].imag << "\n ";
+       
         for (int mid = 1; mid < extendSize; mid <<= 1){
           Complex Wn = GetComplex(cos(pi / mid), -sin(pi / mid)); /*drop the "-" sin，then divided by len to get the IFFT*/
           for (int R = mid << 1, j = 0; j < extendSize; j += R){
@@ -362,22 +360,22 @@ int main() {
     
     //# print output
     // printComplex(DataShared_Frm_reshape, 10);
-    std::cout << frm << "\n"; 
-    for (int i = 0; i < 20; i++)
-     std::cout << i <<" maxDisidx "<< maxDisIdx[i] << " Dis " << Dis[i] << "\n ";
-    for (int i = 0; i < 10; i++)
-     std::cout <<"data_Frm0_read "<< i << " " << DataShared_Frm0_read[i] << "\n ";
-    for (int i = 0; i < 10; i++)
-     std::cout <<"data_Frm0_reshape "<< i << " " << DataShared_Frm0_reshape[i].real<< " " << DataShared_Frm0_reshape[i].imag << "\n ";
-    for (int i = 0; i < 10; i++)
-     std::cout <<"data_Frm_read "<< i << " " << DataShared_Frm_read[i] << "\n ";
-    for (int i = 0; i < 10; i++)
-     std::cout <<"data_Frm_reshape "<< i << " " << DataShared_Frm_reshape[i].real<< " " << DataShared_Frm_reshape[i].imag << "\n ";
-    for (int i = 0; i < 10; i++)
-     std::cout <<"data_Rx "<< i << " " << DataShared_Rx[i].real << " " << DataShared_Rx[i].imag << "\n ";
+    // std::cout << frm << "\n"; 
+    // for (int i = 0; i < 20; i++)
+    //  std::cout << i <<" maxDisidx "<< maxDisIdx[i] << " Dis " << Dis[i] << "\n ";
+    // for (int i = 0; i < 10; i++)
+    //  std::cout <<"data_Frm0_read "<< i << " " << DataShared_Frm0_read[i] << "\n ";
+    // for (int i = 0; i < 10; i++)
+    //  std::cout <<"data_Frm0_reshape "<< i << " " << DataShared_Frm0_reshape[i].real<< " " << DataShared_Frm0_reshape[i].imag << "\n ";
+    // for (int i = 0; i < 10; i++)
+    //  std::cout <<"data_Frm_read "<< i << " " << DataShared_Frm_read[i] << "\n ";
+    // for (int i = 0; i < 10; i++)
+    //  std::cout <<"data_Frm_reshape "<< i << " " << DataShared_Frm_reshape[i].real<< " " << DataShared_Frm_reshape[i].imag << "\n ";
+    // for (int i = 0; i < 10; i++)
+    //  std::cout <<"data_Rx "<< i << " " << DataShared_Rx[i].real << " " << DataShared_Rx[i].imag << "\n ";
    
-    for (int i = 0; i < 10; i++)
-     std::cout <<"data_FFT "<< i << " " << DataShared_FFT[i].real<< " " << DataShared_FFT[i].imag << "\n ";
+    // for (int i = 0; i < 10; i++)
+    //  std::cout <<"data_FFT "<< i << " " << DataShared_FFT[i].real<< " " << DataShared_FFT[i].imag << "\n ";
     //for (int i = 0; i < frm; i++) std::cout << Dis[i] << "\n";
 
     fclose(infile);
