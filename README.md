@@ -1,18 +1,15 @@
 # readme 
-this file is based on the vector add file. Now the cmakefile and linkfile haven't changed yet. So the code for radar detection part is in the vector-add-buffers.cpp file. You don't need to change the cmake file or any other file. Just directly programming in the vector-add-buffers.cpp.
-
-To compile:
-1. make build directory
-2. cd the build file
-3. command:
+To compile and run:
+1. command:
 ```
-cmake ..
+make radardetection
+./radardetection
 ```
-4. command:
+2. command:
 ```
-make cpu-gpu
+make all
 ```
-5. move the fhy_s.bin and fhy_direct.bin file into the build file.
-6. run ./vector-add-buffers
+To clean the file:
+make clean
 
 ! now you can only run this in the local machine. Devcloud still has some bugs that I can't handle them.
