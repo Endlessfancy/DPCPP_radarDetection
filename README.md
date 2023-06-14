@@ -1,4 +1,7 @@
 # readme 
+The CPU-GPU version is in usm branch.
+
+This main branch is the previous version, you can ignore this version.
 this file is based on the vector add file. Now the cmakefile and linkfile haven't changed yet. So the code for radar detection part is in the vector-add-buffers.cpp file. You don't need to change the cmake file or any other file. Just directly programming in the vector-add-buffers.cpp.
 
 To compile:
